@@ -2,7 +2,8 @@
 const Discord = require('discord.js');
 const listener_client = new Discord.Client();
 const streamer_client = new Discord.Client();
-token_json = require('./tokens.json');
+const fs = require('fs');
+const token_json = JSON.parse(fs.readFileSync('./tokens.json', 'utf8'));
 const listener_token = token_json.listener_token;
 const streamer_token = token_json.streamer_token;
 let listener_voice_connection = null;
